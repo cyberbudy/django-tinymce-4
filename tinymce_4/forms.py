@@ -9,7 +9,7 @@ forms.EmailField.input_type = "email"
 
 
 
-class TinyMCEFormField(forms.CharField):
+class TinyMCEFormDefaultField(forms.CharField):
 
     """Form field with support TinyMCE."""
 
