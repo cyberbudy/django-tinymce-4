@@ -50,4 +50,4 @@ class TinyMCEModelDefaultField(models.TextField):
         kwargs['widget'] = TinyMCEFullWidget
         if self._small_tiny:
             kwargs['widget'] = TinyMCESmallWidget
-        return super(TinyMCEModelField, self).formfield(**kwargs)
+        return super(TinyMCEModelDefaultField, self).formfield(**kwargs)
