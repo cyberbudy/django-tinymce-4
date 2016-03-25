@@ -43,7 +43,7 @@ class TinyMCEModelDefaultField(models.TextField):
     def __init__(self, *args, **kwargs):
         self._small_tiny = kwargs.pop('small_tiny', False)
         self._tinymce_type = kwargs.pop('tinymce_type', False)
-        super(TinyMCEModelField, self).__init__(*args, **kwargs)
+        super(TinyMCEModelDefaultField, self).__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
         kwargs['form_class'] = TinyMCEFormDefaultField
