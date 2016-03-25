@@ -27,6 +27,35 @@ class TinyMCEWidget(forms.Textarea):
             'tinymce_4/settings/django-filebrowser.js',
         ]
 
+class TinyMCEOnlyWidget(forms.Textarea):
+    """
+    Textarea form widget with support TinyMCE.
+    See: http://www.tinymce.com/wiki.php/TinyMCE
+    """
+
+    _css_class = 'tinymce'
+
+    def __init__(self, attrs=None):
+        attrs = attrs or {}
+        css_class = attrs.get('class', '')
+        attrs['class'] = ' '.join([css_class, self._css_class])
+        super(TinyMCEOnlyWidget, self).__init__(attrs)
+
+    class Media:
+        js = [
+            'tinymce_4/tinymce/tinymce.min.js',
+        ]
+
+class TinyMCEDefaultWidget(TinyMCEOnlyWidget):
+
+    class Media:
+        css = {
+            'all': ('tinymce_4/tinymce/skins/lightgray/content.min.css',)
+        }
+
+        js = [
+            'tinymce/settings/default.js',
+        ]
 
 class TinyMCEFullWidget(TinyMCEWidget):
     """
