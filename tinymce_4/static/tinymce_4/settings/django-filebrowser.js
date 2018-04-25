@@ -1,9 +1,9 @@
 'use strict';
 
-function DjangoFilebrowser(field_name, url, type, win) {
+function DjangoFilebrowser (field_name, url, type, win) {
 
-  var editor = win.tinyMCE.activeEditor,
-      cmsURL = '/admin/filebrowser/browse/?pop=2';
+  var editor = win.tinyMCE.activeEditor;
+  var cmsURL = '/admin/filebrowser/browse/?pop=2';
 
   cmsURL += '&type=' + type;
 
